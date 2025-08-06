@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Operations Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #title {
+      color: darkblue;
+    }
+    #output {
+      margin-top: 10px;
+      color: green;
+    }
+    #image {
+      width: 200px;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Welcome to DOM Manipulation</h1>
+  <p id="description">Click the button to change the text and perform other actions.</p>
+
+  <input type="text" id="nameInput" placeholder="Enter your name" />
+  <button onclick="handleClick()">Click Me</button>
+
+  <p id="output"></p>
+
+  <img id="image" src="https://via.placeholder.com/200" alt="Placeholder Image" />
+
+  <script>
+    function handleClick() {
+      // Change heading text
+      document.getElementById("title").innerText = "DOM Updated Successfully!";
+
+      // Get value from input and show it in paragraph
+      const name = document.getElementById("nameInput").value;
+      document.getElementById("output").innerText = "Hello, " + name + "!";
+
+      // Change image
+      document.getElementById("image").src = "https://picsum.photos/200";
+
+      // Change description style
+      document.getElementById("description").style.color = "red";
+      document.getElementById("description").style.fontWeight = "bold";
+    }
+  </script>
+
+</body>
+</html>
